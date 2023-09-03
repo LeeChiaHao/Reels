@@ -52,8 +52,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     createEmojis();
     function createEmojis() {
-        const emojis = "💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩";
-        const emoji2 = " 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩";
+        const emojis = "💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 ";
+        const emoji2 = " 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 ";
         document.getElementById("emoji-display").classList.add("emoji-container")
 
         const emojiContainer = document.querySelector(".emoji-container");
