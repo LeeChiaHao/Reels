@@ -40,26 +40,23 @@
 
 <body class="row justify-content-center align-content-center">
     <div class="col-6 text-center ">
-
         <div class="row justify-content-center">
             <div class="col-12 text-center">
                 <div>
-                    <input type="text" class="form-control" id="ans" placeholder="The date you shared (dd/MM/yyyy)"
-                        onfocus="(this.type='date')" onblur="(this.type='text')" />
+                    <input type="text" class="form-control" id="ans" placeholder="The date you shared (mm/dd/yyyy)"
+                        onfocus="(this.type='date')" />
                 </div>
             </div>
             <div class="col-12">
-                <div class="row justify-content-center">
+                <div class="row justify-content-center m-3">
                     <button class="btn btn-danger col-3" id="moveBtn">Submit</button>
                 </div>
             </div>
         </div>
         <span class="d-none">💩</span>
-        <div class="col-12 emoji-container emojiSize">
-
+        <div class="col-12 emoji-container emojiSize" id="emoji-display">
         </div>
     </div>
-
 </body>
 
 </html>
