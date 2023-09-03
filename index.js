@@ -23,15 +23,29 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener("click", () => {
         var isCorrect = checkAnswer();
         if (!isCorrect) {
-            return false;
+            createEmojis();
+        } else {
+            createBye()
+        }
+    })
+    var dateInput = document.getElementById("ans");
+    dateInput.addEventListener("input", () => {
+        if (checkAnswer()) {
+            btn.classList.remove("btn-danger")
+            btn.classList.add("btn-success")
+            btn.style.margin = "";
+        } else {
+            btn.classList.add("btn-danger")
+            btn.classList.remove("btn-success")
         }
     })
 
     function checkAnswer() {
         var input = document.getElementById("ans").value;
-        if (input == "123") {
+        if (input == "2023-04-18") {
             return true;
         } else {
+            createEmojis();
             return false;
         }
     }
@@ -40,8 +54,12 @@ document.addEventListener("DOMContentLoaded", () => {
     function createEmojis() {
         const emojis = "💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩";
         const emoji2 = " 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩 💩";
+        document.getElementById("emoji-display").classList.add("emoji-container")
 
         const emojiContainer = document.querySelector(".emoji-container");
+        while (emojiContainer.firstChild) {
+            emojiContainer.removeChild(emojiContainer.firstChild);
+        }
         for (var i = 0; i < 6; i++) {
             const emojiElement = document.createElement("div");
             emojiElement.classList.add("emoji");
@@ -53,13 +71,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
             }
             emojiContainer.appendChild(emojiElement);
-
         }
+    }
 
+    function createBye() {
+        const emojiContainer = document.querySelector(".emoji-container");
+        while (emojiContainer.firstChild) {
+            emojiContainer.removeChild(emojiContainer.firstChild);
+        }
+        const emojiElement = document.createElement("div");
+        emojiElement.classList.add("emoji");
+        emojiElement.textContent = "BYE. JT.";
+        emojiContainer.appendChild(emojiElement);
+        document.getElementById("emoji-display").classList.remove("emoji-container")
     }
 })
-
-
-
-
-
